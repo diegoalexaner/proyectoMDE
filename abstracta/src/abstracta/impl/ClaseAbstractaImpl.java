@@ -1,0 +1,424 @@
+/**
+ */
+package abstracta.impl;
+
+import abstracta.AbstractaPackage;
+import abstracta.AtributoAbstracta;
+import abstracta.ClaseAbstracta;
+import abstracta.ContainmentAbstracta;
+import abstracta.HerenciaAbstracta;
+import abstracta.MetodoAbstracta;
+import abstracta.RelacionAbstracta;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Clase Abstracta</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link abstracta.impl.ClaseAbstractaImpl#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link abstracta.impl.ClaseAbstractaImpl#getRuta <em>Ruta</em>}</li>
+ *   <li>{@link abstracta.impl.ClaseAbstractaImpl#getListaAtributos <em>Lista Atributos</em>}</li>
+ *   <li>{@link abstracta.impl.ClaseAbstractaImpl#getListaMetodos <em>Lista Metodos</em>}</li>
+ *   <li>{@link abstracta.impl.ClaseAbstractaImpl#getListaRelaciones <em>Lista Relaciones</em>}</li>
+ *   <li>{@link abstracta.impl.ClaseAbstractaImpl#getListaRelacionesHerencia <em>Lista Relaciones Herencia</em>}</li>
+ *   <li>{@link abstracta.impl.ClaseAbstractaImpl#getListaRelacionesContaiment <em>Lista Relaciones Contaiment</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class ClaseAbstractaImpl extends EObjectImpl implements ClaseAbstracta {
+	/**
+	 * The default value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNombre()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NOMBRE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNombre()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nombre = NOMBRE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRuta() <em>Ruta</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuta()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RUTA_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRuta() <em>Ruta</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuta()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ruta = RUTA_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getListaAtributos() <em>Lista Atributos</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getListaAtributos()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AtributoAbstracta> listaAtributos;
+
+	/**
+	 * The cached value of the '{@link #getListaMetodos() <em>Lista Metodos</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getListaMetodos()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MetodoAbstracta> listaMetodos;
+
+	/**
+	 * The cached value of the '{@link #getListaRelaciones() <em>Lista Relaciones</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getListaRelaciones()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RelacionAbstracta> listaRelaciones;
+
+	/**
+	 * The cached value of the '{@link #getListaRelacionesHerencia() <em>Lista Relaciones Herencia</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getListaRelacionesHerencia()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<HerenciaAbstracta> listaRelacionesHerencia;
+
+	/**
+	 * The cached value of the '{@link #getListaRelacionesContaiment() <em>Lista Relaciones Contaiment</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getListaRelacionesContaiment()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ContainmentAbstracta> listaRelacionesContaiment;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ClaseAbstractaImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return AbstractaPackage.Literals.CLASE_ABSTRACTA;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNombre(String newNombre) {
+		String oldNombre = nombre;
+		nombre = newNombre;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.CLASE_ABSTRACTA__NOMBRE, oldNombre, nombre));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRuta() {
+		return ruta;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRuta(String newRuta) {
+		String oldRuta = ruta;
+		ruta = newRuta;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.CLASE_ABSTRACTA__RUTA, oldRuta, ruta));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<AtributoAbstracta> getListaAtributos() {
+		if (listaAtributos == null) {
+			listaAtributos = new EObjectContainmentEList<AtributoAbstracta>(AtributoAbstracta.class, this, AbstractaPackage.CLASE_ABSTRACTA__LISTA_ATRIBUTOS);
+		}
+		return listaAtributos;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<MetodoAbstracta> getListaMetodos() {
+		if (listaMetodos == null) {
+			listaMetodos = new EObjectContainmentEList<MetodoAbstracta>(MetodoAbstracta.class, this, AbstractaPackage.CLASE_ABSTRACTA__LISTA_METODOS);
+		}
+		return listaMetodos;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<RelacionAbstracta> getListaRelaciones() {
+		if (listaRelaciones == null) {
+			listaRelaciones = new EObjectContainmentEList<RelacionAbstracta>(RelacionAbstracta.class, this, AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES);
+		}
+		return listaRelaciones;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<HerenciaAbstracta> getListaRelacionesHerencia() {
+		if (listaRelacionesHerencia == null) {
+			listaRelacionesHerencia = new EObjectContainmentEList<HerenciaAbstracta>(HerenciaAbstracta.class, this, AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_HERENCIA);
+		}
+		return listaRelacionesHerencia;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ContainmentAbstracta> getListaRelacionesContaiment() {
+		if (listaRelacionesContaiment == null) {
+			listaRelacionesContaiment = new EObjectContainmentEList<ContainmentAbstracta>(ContainmentAbstracta.class, this, AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_CONTAIMENT);
+		}
+		return listaRelacionesContaiment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_ATRIBUTOS:
+				return ((InternalEList<?>)getListaAtributos()).basicRemove(otherEnd, msgs);
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_METODOS:
+				return ((InternalEList<?>)getListaMetodos()).basicRemove(otherEnd, msgs);
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES:
+				return ((InternalEList<?>)getListaRelaciones()).basicRemove(otherEnd, msgs);
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_HERENCIA:
+				return ((InternalEList<?>)getListaRelacionesHerencia()).basicRemove(otherEnd, msgs);
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_CONTAIMENT:
+				return ((InternalEList<?>)getListaRelacionesContaiment()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case AbstractaPackage.CLASE_ABSTRACTA__NOMBRE:
+				return getNombre();
+			case AbstractaPackage.CLASE_ABSTRACTA__RUTA:
+				return getRuta();
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_ATRIBUTOS:
+				return getListaAtributos();
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_METODOS:
+				return getListaMetodos();
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES:
+				return getListaRelaciones();
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_HERENCIA:
+				return getListaRelacionesHerencia();
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_CONTAIMENT:
+				return getListaRelacionesContaiment();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case AbstractaPackage.CLASE_ABSTRACTA__NOMBRE:
+				setNombre((String)newValue);
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__RUTA:
+				setRuta((String)newValue);
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_ATRIBUTOS:
+				getListaAtributos().clear();
+				getListaAtributos().addAll((Collection<? extends AtributoAbstracta>)newValue);
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_METODOS:
+				getListaMetodos().clear();
+				getListaMetodos().addAll((Collection<? extends MetodoAbstracta>)newValue);
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES:
+				getListaRelaciones().clear();
+				getListaRelaciones().addAll((Collection<? extends RelacionAbstracta>)newValue);
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_HERENCIA:
+				getListaRelacionesHerencia().clear();
+				getListaRelacionesHerencia().addAll((Collection<? extends HerenciaAbstracta>)newValue);
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_CONTAIMENT:
+				getListaRelacionesContaiment().clear();
+				getListaRelacionesContaiment().addAll((Collection<? extends ContainmentAbstracta>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case AbstractaPackage.CLASE_ABSTRACTA__NOMBRE:
+				setNombre(NOMBRE_EDEFAULT);
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__RUTA:
+				setRuta(RUTA_EDEFAULT);
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_ATRIBUTOS:
+				getListaAtributos().clear();
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_METODOS:
+				getListaMetodos().clear();
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES:
+				getListaRelaciones().clear();
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_HERENCIA:
+				getListaRelacionesHerencia().clear();
+				return;
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_CONTAIMENT:
+				getListaRelacionesContaiment().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case AbstractaPackage.CLASE_ABSTRACTA__NOMBRE:
+				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
+			case AbstractaPackage.CLASE_ABSTRACTA__RUTA:
+				return RUTA_EDEFAULT == null ? ruta != null : !RUTA_EDEFAULT.equals(ruta);
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_ATRIBUTOS:
+				return listaAtributos != null && !listaAtributos.isEmpty();
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_METODOS:
+				return listaMetodos != null && !listaMetodos.isEmpty();
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES:
+				return listaRelaciones != null && !listaRelaciones.isEmpty();
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_HERENCIA:
+				return listaRelacionesHerencia != null && !listaRelacionesHerencia.isEmpty();
+			case AbstractaPackage.CLASE_ABSTRACTA__LISTA_RELACIONES_CONTAIMENT:
+				return listaRelacionesContaiment != null && !listaRelacionesContaiment.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (nombre: ");
+		result.append(nombre);
+		result.append(", ruta: ");
+		result.append(ruta);
+		result.append(')');
+		return result.toString();
+	}
+
+} //ClaseAbstractaImpl

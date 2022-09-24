@@ -1,0 +1,791 @@
+	/*
+ * 
+ */
+package concreta.diagram.part;
+
+	/**
+ * @generated
+ */
+public class ConcretaDiagramUpdater {
+		
+	/**
+ * @generated
+ */
+public static boolean isShortcutOrphaned(org.eclipse.gmf.runtime.notation.View view) {
+	return !view.isSetElement() || view.getElement() == null || view.getElement().eIsProxy();
+}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaNodeDescriptor> getSemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		switch (concreta.diagram.part.ConcretaVisualIDRegistry.getVisualID(view)) {
+		case concreta.diagram.edit.parts.DiagramaClasesEditPart.VISUAL_ID:
+	return getDiagramaClases_1000SemanticChildren(view);
+case concreta.diagram.edit.parts.PaquetePaqueteListaClasesCompartmentEditPart.VISUAL_ID:
+	return getPaquetePaqueteListaClasesCompartment_7001SemanticChildren(view);
+case concreta.diagram.edit.parts.ClaseClaseListaAtributosCompartmentEditPart.VISUAL_ID:
+	return getClaseClaseListaAtributosCompartment_7002SemanticChildren(view);
+case concreta.diagram.edit.parts.ClaseClaseListaMetodosCompartmentEditPart.VISUAL_ID:
+	return getClaseClaseListaMetodosCompartment_7003SemanticChildren(view);
+case concreta.diagram.edit.parts.MetodoMetodoListaParametrosCompartmentEditPart.VISUAL_ID:
+	return getMetodoMetodoListaParametrosCompartment_7004SemanticChildren(view);
+case concreta.diagram.edit.parts.ClaseClaseListaAtributosCompartment2EditPart.VISUAL_ID:
+	return getClaseClaseListaAtributosCompartment_7005SemanticChildren(view);
+case concreta.diagram.edit.parts.ClaseClaseListaMetodosCompartment2EditPart.VISUAL_ID:
+	return getClaseClaseListaMetodosCompartment_7006SemanticChildren(view);
+	}
+		return java.util.Collections.emptyList();
+}
+	
+	/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaNodeDescriptor> getDiagramaClases_1000SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (!view.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+concreta.DiagramaClases modelElement = (concreta.DiagramaClases) view.getElement();
+	java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getListaPaquetes().iterator(); it.hasNext();) {
+		concreta.Paquete childElement = (concreta.Paquete) it.next();
+					int visualID = concreta.diagram.part.ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == concreta.diagram.edit.parts.PaqueteEditPart.VISUAL_ID) {
+	result.add(new concreta.diagram.part.ConcretaNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+						for (java.util.Iterator<?> it = modelElement.getListaClases().iterator(); it.hasNext();) {
+		concreta.Clase childElement = (concreta.Clase) it.next();
+					int visualID = concreta.diagram.part.ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == concreta.diagram.edit.parts.ClaseEditPart.VISUAL_ID) {
+	result.add(new concreta.diagram.part.ConcretaNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaNodeDescriptor> getPaquetePaqueteListaClasesCompartment_7001SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+concreta.Paquete modelElement = (concreta.Paquete) containerView.getElement();
+	java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getListaClases().iterator(); it.hasNext();) {
+		concreta.Clase childElement = (concreta.Clase) it.next();
+					int visualID = concreta.diagram.part.ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == concreta.diagram.edit.parts.Clase2EditPart.VISUAL_ID) {
+	result.add(new concreta.diagram.part.ConcretaNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaNodeDescriptor> getClaseClaseListaAtributosCompartment_7002SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+concreta.Clase modelElement = (concreta.Clase) containerView.getElement();
+	java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getListaAtributos().iterator(); it.hasNext();) {
+		concreta.Atributo childElement = (concreta.Atributo) it.next();
+					int visualID = concreta.diagram.part.ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == concreta.diagram.edit.parts.AtributoEditPart.VISUAL_ID) {
+	result.add(new concreta.diagram.part.ConcretaNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaNodeDescriptor> getClaseClaseListaMetodosCompartment_7003SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+concreta.Clase modelElement = (concreta.Clase) containerView.getElement();
+	java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getListaMetodos().iterator(); it.hasNext();) {
+		concreta.Metodo childElement = (concreta.Metodo) it.next();
+					int visualID = concreta.diagram.part.ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == concreta.diagram.edit.parts.MetodoEditPart.VISUAL_ID) {
+	result.add(new concreta.diagram.part.ConcretaNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaNodeDescriptor> getMetodoMetodoListaParametrosCompartment_7004SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+concreta.Metodo modelElement = (concreta.Metodo) containerView.getElement();
+	java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getListaParametros().iterator(); it.hasNext();) {
+		concreta.Parametro childElement = (concreta.Parametro) it.next();
+					int visualID = concreta.diagram.part.ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == concreta.diagram.edit.parts.ParametroEditPart.VISUAL_ID) {
+	result.add(new concreta.diagram.part.ConcretaNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaNodeDescriptor> getClaseClaseListaAtributosCompartment_7005SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+concreta.Clase modelElement = (concreta.Clase) containerView.getElement();
+	java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getListaAtributos().iterator(); it.hasNext();) {
+		concreta.Atributo childElement = (concreta.Atributo) it.next();
+					int visualID = concreta.diagram.part.ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == concreta.diagram.edit.parts.AtributoEditPart.VISUAL_ID) {
+	result.add(new concreta.diagram.part.ConcretaNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaNodeDescriptor> getClaseClaseListaMetodosCompartment_7006SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+concreta.Clase modelElement = (concreta.Clase) containerView.getElement();
+	java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getListaMetodos().iterator(); it.hasNext();) {
+		concreta.Metodo childElement = (concreta.Metodo) it.next();
+					int visualID = concreta.diagram.part.ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == concreta.diagram.edit.parts.MetodoEditPart.VISUAL_ID) {
+	result.add(new concreta.diagram.part.ConcretaNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+		switch (concreta.diagram.part.ConcretaVisualIDRegistry.getVisualID(view)) {
+		case concreta.diagram.edit.parts.DiagramaClasesEditPart.VISUAL_ID:
+	return getDiagramaClases_1000ContainedLinks(view);
+case concreta.diagram.edit.parts.PaqueteEditPart.VISUAL_ID:
+	return getPaquete_2001ContainedLinks(view);
+case concreta.diagram.edit.parts.ClaseEditPart.VISUAL_ID:
+	return getClase_2002ContainedLinks(view);
+case concreta.diagram.edit.parts.Clase2EditPart.VISUAL_ID:
+	return getClase_3001ContainedLinks(view);
+case concreta.diagram.edit.parts.AtributoEditPart.VISUAL_ID:
+	return getAtributo_3002ContainedLinks(view);
+case concreta.diagram.edit.parts.MetodoEditPart.VISUAL_ID:
+	return getMetodo_3003ContainedLinks(view);
+case concreta.diagram.edit.parts.ParametroEditPart.VISUAL_ID:
+	return getParametro_3004ContainedLinks(view);
+case concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID:
+	return getRelacion_4001ContainedLinks(view);
+case concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID:
+	return getContainment_4002ContainedLinks(view);
+case concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID:
+	return getHerencia_4003ContainedLinks(view);
+	}
+		return java.util.Collections.emptyList();
+}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getIncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+		switch (concreta.diagram.part.ConcretaVisualIDRegistry.getVisualID(view)) {
+		case concreta.diagram.edit.parts.PaqueteEditPart.VISUAL_ID:
+	return getPaquete_2001IncomingLinks(view);
+case concreta.diagram.edit.parts.ClaseEditPart.VISUAL_ID:
+	return getClase_2002IncomingLinks(view);
+case concreta.diagram.edit.parts.Clase2EditPart.VISUAL_ID:
+	return getClase_3001IncomingLinks(view);
+case concreta.diagram.edit.parts.AtributoEditPart.VISUAL_ID:
+	return getAtributo_3002IncomingLinks(view);
+case concreta.diagram.edit.parts.MetodoEditPart.VISUAL_ID:
+	return getMetodo_3003IncomingLinks(view);
+case concreta.diagram.edit.parts.ParametroEditPart.VISUAL_ID:
+	return getParametro_3004IncomingLinks(view);
+case concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID:
+	return getRelacion_4001IncomingLinks(view);
+case concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID:
+	return getContainment_4002IncomingLinks(view);
+case concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID:
+	return getHerencia_4003IncomingLinks(view);
+	}
+		return java.util.Collections.emptyList();
+}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getOutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+		switch (concreta.diagram.part.ConcretaVisualIDRegistry.getVisualID(view)) {
+		case concreta.diagram.edit.parts.PaqueteEditPart.VISUAL_ID:
+	return getPaquete_2001OutgoingLinks(view);
+case concreta.diagram.edit.parts.ClaseEditPart.VISUAL_ID:
+	return getClase_2002OutgoingLinks(view);
+case concreta.diagram.edit.parts.Clase2EditPart.VISUAL_ID:
+	return getClase_3001OutgoingLinks(view);
+case concreta.diagram.edit.parts.AtributoEditPart.VISUAL_ID:
+	return getAtributo_3002OutgoingLinks(view);
+case concreta.diagram.edit.parts.MetodoEditPart.VISUAL_ID:
+	return getMetodo_3003OutgoingLinks(view);
+case concreta.diagram.edit.parts.ParametroEditPart.VISUAL_ID:
+	return getParametro_3004OutgoingLinks(view);
+case concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID:
+	return getRelacion_4001OutgoingLinks(view);
+case concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID:
+	return getContainment_4002OutgoingLinks(view);
+case concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID:
+	return getHerencia_4003OutgoingLinks(view);
+	}
+		return java.util.Collections.emptyList();
+}
+		
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getDiagramaClases_1000ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	concreta.DiagramaClases modelElement = (concreta.DiagramaClases) view.getElement();
+		java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+		result.addAll(getContainedTypeModelFacetLinks_Relacion_4001(modelElement));	
+	result.addAll(getContainedTypeModelFacetLinks_Containment_4002(modelElement));	
+	result.addAll(getContainedTypeModelFacetLinks_Herencia_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getPaquete_2001ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getClase_2002ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getClase_3001ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getAtributo_3002ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getMetodo_3003ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getParametro_3004ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getRelacion_4001ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getContainment_4002ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getHerencia_4003ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+		
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getPaquete_2001IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getClase_2002IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	concreta.Clase modelElement = (concreta.Clase) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Relacion_4001(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Containment_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Herencia_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getClase_3001IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	concreta.Clase modelElement = (concreta.Clase) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Relacion_4001(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Containment_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Herencia_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getAtributo_3002IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getMetodo_3003IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getParametro_3004IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getRelacion_4001IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getContainment_4002IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getHerencia_4003IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+		
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getPaquete_2001OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getClase_2002OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	concreta.Clase modelElement = (concreta.Clase) view.getElement();
+		java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_Relacion_4001(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Containment_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Herencia_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getClase_3001OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	concreta.Clase modelElement = (concreta.Clase) view.getElement();
+		java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_Relacion_4001(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Containment_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Herencia_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getAtributo_3002OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getMetodo_3003OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getParametro_3004OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getRelacion_4001OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getContainment_4002OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getHerencia_4003OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+	/**
+ * @generated
+ */
+private static java.util.Collection<concreta.diagram.part.ConcretaLinkDescriptor> getContainedTypeModelFacetLinks_Relacion_4001(concreta.DiagramaClases container) {
+	java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getListaRelaciones().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof concreta.Relacion) {
+		continue;
+	}
+	concreta.Relacion link = (concreta.Relacion) linkObject;
+		if (concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID != concreta.diagram.part.ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			concreta.Clase dst = link.getTarget();
+							concreta.Clase src = link.getSource();
+							result.add(new concreta.diagram.part.ConcretaLinkDescriptor(src, dst, link, concreta.diagram.providers.ConcretaElementTypes.Relacion_4001, concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+	/**
+ * @generated
+ */
+private static java.util.Collection<concreta.diagram.part.ConcretaLinkDescriptor> getContainedTypeModelFacetLinks_Containment_4002(concreta.DiagramaClases container) {
+	java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getListaRelacionesContaiment().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof concreta.Containment) {
+		continue;
+	}
+	concreta.Containment link = (concreta.Containment) linkObject;
+		if (concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID != concreta.diagram.part.ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			concreta.Clase dst = link.getTarget();
+							concreta.Clase src = link.getSource();
+							result.add(new concreta.diagram.part.ConcretaLinkDescriptor(src, dst, link, concreta.diagram.providers.ConcretaElementTypes.Containment_4002, concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+	/**
+ * @generated
+ */
+private static java.util.Collection<concreta.diagram.part.ConcretaLinkDescriptor> getContainedTypeModelFacetLinks_Herencia_4003(concreta.DiagramaClases container) {
+	java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getListaRelacionesHerencia().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof concreta.Herencia) {
+		continue;
+	}
+	concreta.Herencia link = (concreta.Herencia) linkObject;
+		if (concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID != concreta.diagram.part.ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			concreta.Clase dst = link.getTarget();
+							concreta.Clase src = link.getSource();
+							result.add(new concreta.diagram.part.ConcretaLinkDescriptor(src, dst, link, concreta.diagram.providers.ConcretaElementTypes.Herencia_4003, concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+	
+/**
+ * @generated
+ */
+private static java.util.Collection<concreta.diagram.part.ConcretaLinkDescriptor> getIncomingTypeModelFacetLinks_Relacion_4001(concreta.Clase target, java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences) {
+	java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+	java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting> settings = crossReferences.get(target);
+	for (org.eclipse.emf.ecore.EStructuralFeature.Setting setting : settings) {
+		if (setting.getEStructuralFeature() != concreta.ConcretaPackage.eINSTANCE.getRelacion_Target() || false == setting.getEObject() instanceof concreta.Relacion) {
+	continue;
+}
+concreta.Relacion link = (concreta.Relacion) setting.getEObject();
+	if (concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID != concreta.diagram.part.ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+				concreta.Clase src = link.getSource();
+			result.add(new concreta.diagram.part.ConcretaLinkDescriptor(src, target, link, concreta.diagram.providers.ConcretaElementTypes.Relacion_4001, concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+/**
+ * @generated
+ */
+private static java.util.Collection<concreta.diagram.part.ConcretaLinkDescriptor> getIncomingTypeModelFacetLinks_Containment_4002(concreta.Clase target, java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences) {
+	java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+	java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting> settings = crossReferences.get(target);
+	for (org.eclipse.emf.ecore.EStructuralFeature.Setting setting : settings) {
+		if (setting.getEStructuralFeature() != concreta.ConcretaPackage.eINSTANCE.getContainment_Target() || false == setting.getEObject() instanceof concreta.Containment) {
+	continue;
+}
+concreta.Containment link = (concreta.Containment) setting.getEObject();
+	if (concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID != concreta.diagram.part.ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+				concreta.Clase src = link.getSource();
+			result.add(new concreta.diagram.part.ConcretaLinkDescriptor(src, target, link, concreta.diagram.providers.ConcretaElementTypes.Containment_4002, concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+/**
+ * @generated
+ */
+private static java.util.Collection<concreta.diagram.part.ConcretaLinkDescriptor> getIncomingTypeModelFacetLinks_Herencia_4003(concreta.Clase target, java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences) {
+	java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+	java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting> settings = crossReferences.get(target);
+	for (org.eclipse.emf.ecore.EStructuralFeature.Setting setting : settings) {
+		if (setting.getEStructuralFeature() != concreta.ConcretaPackage.eINSTANCE.getHerencia_Target() || false == setting.getEObject() instanceof concreta.Herencia) {
+	continue;
+}
+concreta.Herencia link = (concreta.Herencia) setting.getEObject();
+	if (concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID != concreta.diagram.part.ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+				concreta.Clase src = link.getSource();
+			result.add(new concreta.diagram.part.ConcretaLinkDescriptor(src, target, link, concreta.diagram.providers.ConcretaElementTypes.Herencia_4003, concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+				
+		/**
+ * @generated
+ */
+private static java.util.Collection<concreta.diagram.part.ConcretaLinkDescriptor> getOutgoingTypeModelFacetLinks_Relacion_4001(concreta.Clase source) {
+	concreta.DiagramaClases container = null;
+	// Find container element for the link.
+	// Climb up by containment hierarchy starting from the source
+	// and return the first element that is instance of the container class.
+	for (org.eclipse.emf.ecore.EObject element = source; element != null && container == null; element = element.eContainer()) {
+		if (element instanceof concreta.DiagramaClases) {
+			container = (concreta.DiagramaClases) element;
+		}
+	}
+	if (container == null) {
+		return java.util.Collections.emptyList();
+	}
+		java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getListaRelaciones().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof concreta.Relacion) {
+		continue;
+	}
+	concreta.Relacion link = (concreta.Relacion) linkObject;
+		if (concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID != concreta.diagram.part.ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			concreta.Clase dst = link.getTarget();
+							concreta.Clase src = link.getSource();
+								if (src != source) {
+	continue;
+}
+						result.add(new concreta.diagram.part.ConcretaLinkDescriptor(src, dst, link, concreta.diagram.providers.ConcretaElementTypes.Relacion_4001, concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID));
+		}
+	return result;	
+}		
+				
+		/**
+ * @generated
+ */
+private static java.util.Collection<concreta.diagram.part.ConcretaLinkDescriptor> getOutgoingTypeModelFacetLinks_Containment_4002(concreta.Clase source) {
+	concreta.DiagramaClases container = null;
+	// Find container element for the link.
+	// Climb up by containment hierarchy starting from the source
+	// and return the first element that is instance of the container class.
+	for (org.eclipse.emf.ecore.EObject element = source; element != null && container == null; element = element.eContainer()) {
+		if (element instanceof concreta.DiagramaClases) {
+			container = (concreta.DiagramaClases) element;
+		}
+	}
+	if (container == null) {
+		return java.util.Collections.emptyList();
+	}
+		java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getListaRelacionesContaiment().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof concreta.Containment) {
+		continue;
+	}
+	concreta.Containment link = (concreta.Containment) linkObject;
+		if (concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID != concreta.diagram.part.ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			concreta.Clase dst = link.getTarget();
+							concreta.Clase src = link.getSource();
+								if (src != source) {
+	continue;
+}
+						result.add(new concreta.diagram.part.ConcretaLinkDescriptor(src, dst, link, concreta.diagram.providers.ConcretaElementTypes.Containment_4002, concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID));
+		}
+	return result;	
+}		
+				
+		/**
+ * @generated
+ */
+private static java.util.Collection<concreta.diagram.part.ConcretaLinkDescriptor> getOutgoingTypeModelFacetLinks_Herencia_4003(concreta.Clase source) {
+	concreta.DiagramaClases container = null;
+	// Find container element for the link.
+	// Climb up by containment hierarchy starting from the source
+	// and return the first element that is instance of the container class.
+	for (org.eclipse.emf.ecore.EObject element = source; element != null && container == null; element = element.eContainer()) {
+		if (element instanceof concreta.DiagramaClases) {
+			container = (concreta.DiagramaClases) element;
+		}
+	}
+	if (container == null) {
+		return java.util.Collections.emptyList();
+	}
+		java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor> result = new java.util.LinkedList<concreta.diagram.part.ConcretaLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getListaRelacionesHerencia().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof concreta.Herencia) {
+		continue;
+	}
+	concreta.Herencia link = (concreta.Herencia) linkObject;
+		if (concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID != concreta.diagram.part.ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			concreta.Clase dst = link.getTarget();
+							concreta.Clase src = link.getSource();
+								if (src != source) {
+	continue;
+}
+						result.add(new concreta.diagram.part.ConcretaLinkDescriptor(src, dst, link, concreta.diagram.providers.ConcretaElementTypes.Herencia_4003, concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID));
+		}
+	return result;	
+}		
+		
+					/**
+ * @generated
+ */
+	public static final org.eclipse.gmf.tooling.runtime.update.DiagramUpdater TYPED_INSTANCE = new org.eclipse.gmf.tooling.runtime.update.DiagramUpdater() {
+				/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<concreta.diagram.part.ConcretaNodeDescriptor> getSemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+			return ConcretaDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+			return ConcretaDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getIncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+			return ConcretaDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<concreta.diagram.part.ConcretaLinkDescriptor> getOutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+			return ConcretaDiagramUpdater.getOutgoingLinks(view);
+		}
+	}; 
+			
+	}

@@ -1,0 +1,78 @@
+package diagrama.model;
+
+import javax.swing.JOptionPane;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.DirectoryDialog;
+import org.eclipse.swt.widgets.Shell;
+import abstracta.*;
+import concreta.*;
+
+public class TransformacionM2M{
+
+	private ModelFactory modelFactoryConcreta;
+	private ModelFactoryAbstracta modelFactoryAbstracta;
+
+	public TransformacionM2M(ModelFactory modelFactoryConcreta, ModelFactoryAbstracta modelFactoryAbstracta) {
+		super();
+		this.modelFactoryConcreta = modelFactoryConcreta;
+		this.modelFactoryAbstracta= modelFactoryAbstracta;
+	}
+
+	public void transformaModel2Model() {
+		DirectoryDialog fd = new DirectoryDialog(new Shell(), SWT.SELECTED);
+		fd.setText("Version Path");
+		//fd.setFilterPath(path);
+		String rutaSeleccionada = fd.open();
+		System.out.println(rutaSeleccionada);
+		
+		
+		if(rutaSeleccionada.equals("")) {
+			JOptionPane.showMessageDialog(null, "Seleccione una ruta");
+			return;
+		}
+		PaqueteAbstracta paqueteAbstracta= modelFactoryAbstracta.getListaPaquetes().get(0);
+		
+		for ( ClaseAbstracta claseAbstracta :paqueteAbstracta.getListaClases()) {
+			StringBuilder cadena= new StringBuilder(); 
+			
+			cadena.append("package " +  claseAbstracta.getRuta() + ";");
+			agregarNombreClase(cadena, claseAbstracta);
+			agregarAtributos(cadena, claseAbstracta);
+			agregarMetodoConstructor(cadena, claseAbstracta);
+			agregarAtributos(cadena, claseAbstracta);
+			cadena.append("\n");
+			String ruta= rutaSeleccionada + "/" + claseAbstracta.getRuta();
+			String nombreArchivo= claseAbstracta.getNombre() +".java";
+			guardarArchivo(cadena, ruta, nombreArchivo);
+		}
+	}
+
+	private void guardarArchivo(StringBuilder cadena, String ruta, String nombreArchivo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+	private void agregarMetodoConstructor(StringBuilder cadena, ClaseAbstracta claseAbstracta) {
+		cadena.append("public " + claseAbstracta.getNombre() + " (");
+		
+		for (AtributoAbstracta atributoAbstracta : claseAbstracta.getListaAtributos()) {
+			cadena.append( atributoAbstracta.getNombre() + "\n");
+		}
+	}
+
+	private void agregarAtributos(StringBuilder cadena, ClaseAbstracta claseAbstracta) {
+		for (AtributoAbstracta atributoAbstracta : claseAbstracta.getListaAtributos()) {
+			cadena.append("private " + atributoAbstracta.getNombre() + "\n");
+		}
+	}
+
+	private void agregarNombreClase(StringBuilder cadena, ClaseAbstracta claseAbstracta) {
+		cadena.append("public class "+ claseAbstracta.getNombre() + " " + "{" + "\n");
+	}
+	
+	
+	
+	
+}

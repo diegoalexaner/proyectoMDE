@@ -1,0 +1,224 @@
+/*
+ * 
+ */
+package concreta.diagram.providers;
+
+/**
+ * @generated
+ */
+public class ConcretaParserProvider extends org.eclipse.gmf.runtime.common.core.service.AbstractProvider implements org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider {
+	
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser paqueteNombre_5005Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getPaqueteNombre_5005Parser() {
+		if (paqueteNombre_5005Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				concreta.ConcretaPackage.eINSTANCE.getPaquete_Nombre()
+			};
+				concreta.diagram.parsers.MessageFormatParser parser = new concreta.diagram.parsers.MessageFormatParser(features);
+								paqueteNombre_5005Parser = parser;
+		}
+		return paqueteNombre_5005Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser claseNombre_5006Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getClaseNombre_5006Parser() {
+		if (claseNombre_5006Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				concreta.ConcretaPackage.eINSTANCE.getClase_Nombre()
+			};
+				concreta.diagram.parsers.MessageFormatParser parser = new concreta.diagram.parsers.MessageFormatParser(features);
+								claseNombre_5006Parser = parser;
+		}
+		return claseNombre_5006Parser;
+	}
+
+
+	
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser claseNombre_5004Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getClaseNombre_5004Parser() {
+		if (claseNombre_5004Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				concreta.ConcretaPackage.eINSTANCE.getClase_Nombre()
+			};
+				concreta.diagram.parsers.MessageFormatParser parser = new concreta.diagram.parsers.MessageFormatParser(features);
+								claseNombre_5004Parser = parser;
+		}
+		return claseNombre_5004Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser atributoNombre_5001Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getAtributoNombre_5001Parser() {
+		if (atributoNombre_5001Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				concreta.ConcretaPackage.eINSTANCE.getAtributo_Nombre()
+			};
+				concreta.diagram.parsers.MessageFormatParser parser = new concreta.diagram.parsers.MessageFormatParser(features);
+								atributoNombre_5001Parser = parser;
+		}
+		return atributoNombre_5001Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser metodoNombre_5003Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getMetodoNombre_5003Parser() {
+		if (metodoNombre_5003Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				concreta.ConcretaPackage.eINSTANCE.getMetodo_Nombre()
+			};
+				concreta.diagram.parsers.MessageFormatParser parser = new concreta.diagram.parsers.MessageFormatParser(features);
+								metodoNombre_5003Parser = parser;
+		}
+		return metodoNombre_5003Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser parametroNombre_5002Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getParametroNombre_5002Parser() {
+		if (parametroNombre_5002Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				concreta.ConcretaPackage.eINSTANCE.getParametro_Nombre()
+			};
+				concreta.diagram.parsers.MessageFormatParser parser = new concreta.diagram.parsers.MessageFormatParser(features);
+								parametroNombre_5002Parser = parser;
+		}
+		return parametroNombre_5002Parser;
+	}
+
+
+	
+
+		/**
+ * @generated
+ */
+	protected org.eclipse.gmf.runtime.common.ui.services.parser.IParser getParser(int visualID) {
+		switch (visualID) {
+				case concreta.diagram.edit.parts.PaqueteNombreEditPart.VISUAL_ID: return getPaqueteNombre_5005Parser();
+		case concreta.diagram.edit.parts.ClaseNombreEditPart.VISUAL_ID: return getClaseNombre_5006Parser();
+				case concreta.diagram.edit.parts.ClaseNombre2EditPart.VISUAL_ID: return getClaseNombre_5004Parser();
+		case concreta.diagram.edit.parts.AtributoNombreEditPart.VISUAL_ID: return getAtributoNombre_5001Parser();
+		case concreta.diagram.edit.parts.MetodoNombreEditPart.VISUAL_ID: return getMetodoNombre_5003Parser();
+		case concreta.diagram.edit.parts.ParametroNombreEditPart.VISUAL_ID: return getParametroNombre_5002Parser();
+				}
+		return null;
+	}
+		/**
+ * Utility method that consults ParserService
+ * @generated
+ */
+	public static org.eclipse.gmf.runtime.common.ui.services.parser.IParser getParser(org.eclipse.gmf.runtime.emf.type.core.IElementType type, org.eclipse.emf.ecore.EObject object, String parserHint) {
+		return org.eclipse.gmf.runtime.common.ui.services.parser.ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
+	}
+		/**
+ * @generated
+ */
+	public org.eclipse.gmf.runtime.common.ui.services.parser.IParser getParser(
+			org.eclipse.core.runtime.IAdaptable hint) {
+		String vid = (String) hint.getAdapter(String.class);
+		if (vid != null) {
+			return getParser(concreta.diagram.part.ConcretaVisualIDRegistry.getVisualID(vid));
+		}
+		org.eclipse.gmf.runtime.notation.View view =
+				(org.eclipse.gmf.runtime.notation.View) hint.getAdapter(org.eclipse.gmf.runtime.notation.View.class);
+		if (view != null) {
+			return getParser(concreta.diagram.part.ConcretaVisualIDRegistry.getVisualID(view));
+		}
+		return null;
+	}
+
+		/**
+ * @generated
+ */
+	public boolean provides(org.eclipse.gmf.runtime.common.core.service.IOperation operation) {
+		if (operation instanceof org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation) {
+			org.eclipse.core.runtime.IAdaptable hint =
+					((org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation) operation).getHint();
+			if (concreta.diagram.providers.ConcretaElementTypes.getElement(hint) == null) {
+				return false;
+			}
+			return getParser(hint) != null;
+		}
+		return false;
+	}
+
+		/**
+ * @generated
+ */
+	private static class HintAdapter extends org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter {
+
+		/**
+ * @generated
+ */
+		private final org.eclipse.gmf.runtime.emf.type.core.IElementType elementType;
+
+		/**
+ * @generated
+ */
+		public HintAdapter(org.eclipse.gmf.runtime.emf.type.core.IElementType type,
+				org.eclipse.emf.ecore.EObject object, String parserHint) {
+			super(object, parserHint);
+			assert type != null;
+			elementType = type;
+		}
+
+		/**
+ * @generated
+ */
+		public Object getAdapter(Class adapter) {
+			if (org.eclipse.gmf.runtime.emf.type.core.IElementType.class.equals(adapter)) {
+				return elementType;
+			}
+			return super.getAdapter(adapter);
+		}
+	}
+
+	}

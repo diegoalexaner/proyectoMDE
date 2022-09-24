@@ -1,0 +1,122 @@
+package diagrama.model;
+
+import java.util.ArrayList;
+import abstracta.AbstractaFactory;
+import abstracta.AbstractaPackage;
+import abstracta.AtributoAbstracta;
+import abstracta.ClaseAbstracta;
+import abstracta.MetodoAbstracta;
+import abstracta.ModelFactoryAbstracta;
+import abstracta.PaqueteAbstracta;
+import abstracta.RelacionAbstracta;
+import concreta.Atributo;
+import concreta.Clase;
+import concreta.ConcretaFactory;
+import concreta.ConcretaPackage;
+import concreta.Containment;
+import concreta.DiagramaClases;
+import concreta.Herencia;
+import concreta.Metodo;
+import concreta.ModelFactory;
+import concreta.Paquete;
+import concreta.Relacion;
+
+public class ModelFactoryModel {
+
+	//------------------------------  Singleton ------------------------------------------------
+	private static class SingletonHolder { 
+		private final static ModelFactoryModel eINSTANCE = new ModelFactoryModel();
+	}
+
+	public static ModelFactoryModel getInstance() {
+		return SingletonHolder.eINSTANCE;
+	}
+
+	//------------------------------  Singleton ------------------------------------------------
+	private ModelFactory modelFactoryConcreta = ConcretaFactory.eINSTANCE.createModelFactory();
+	private ModelFactoryAbstracta modelFactoryAbstracta;
+
+	public ModelFactoryModel() {
+
+	}
+
+	public ModelFactoryAbstracta cargarAbstracta() {
+		ModelFactoryAbstracta modelFactory = null;
+		AbstractaPackage whoownmePackage =  AbstractaPackage.eINSTANCE;
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI("platform:/resource/test/src/model/model.abstracta");
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
+		try {
+			resource.load(null);
+			modelFactory = (ModelFactoryAbstracta)resource.getContents().get(0);
+			System.out.println("loaded: " + modelFactory);
+		}
+		catch (java.io.IOException e) {
+			System.out.println("failed to read " + uri); 		
+			System.out.println(e);
+		}
+		return modelFactory;
+	}
+
+	public ModelFactory cargarConcreta() {
+		ModelFactory modelFactory = null;
+		ConcretaPackage whoownmePackage =  ConcretaPackage.eINSTANCE;
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI("platform:/resource/test/src/model/model.concreta");
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
+
+		try {
+			resource.load(null);
+			modelFactory = (ModelFactory)resource.getContents().get(0);
+			System.out.println("loaded: " + modelFactory);
+		}
+		catch (java.io.IOException e) {
+			System.out.println("failed to read " + uri); 		
+			System.out.println(e);
+		}
+		return modelFactory;
+	}
+
+	public void salvarAbstracta() {
+
+		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI("platform:/resource/test/src/model/model.abstracta");
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
+		resource.getContents().add(modelFactoryAbstracta);
+		try {
+			resource.save(java.util.Collections.EMPTY_MAP);
+		} catch (java.io.IOException e) {
+			e.printStackTrace();
+		}
+		return;
+	}
+
+	//Es el mismo metodo de arriba arriba
+	public void transformarModelToModel() {
+
+		modelFactoryAbstracta = cargarAbstracta();
+		modelFactoryConcreta = cargarConcreta();
+
+		modelFactoryAbstracta.getListaPaquetes().get(0).getListaClases().clear();
+		modelFactoryAbstracta.getListaPaquetes().get(0).getListaPaquetes().clear();
+
+		TransformacionM2M transformacionM2M = new TransformacionM2M(modelFactoryConcreta, modelFactoryAbstracta);
+		transformacionM2M.transformaModel2Model();
+		salvarAbstracta();
+
+	}
+	
+
+	public void transformarModelToText() {
+
+		modelFactoryAbstracta = cargarAbstracta();
+		modelFactoryConcreta = cargarConcreta();
+
+		TransformacionM2T transformacionM2T = new TransformacionM2T(modelFactoryConcreta, modelFactoryAbstracta);
+		transformacionM2T.transformaModel2Texto();
+	}
+	
+
+
+}

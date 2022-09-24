@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="diagrama.model.ModelFactoryModel"/>
+<fullyQualifiedTypeName name="concreta.ConcretaPackage"/>
+<fullyQualifiedTypeName name="concreta.Clase"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="concreta.Relacion"/>
+<fullyQualifiedTypeName name="concreta.Containment"/>
+<fullyQualifiedTypeName name="concreta.Herencia"/>
+<fullyQualifiedTypeName name="abstracta.AbstractaPackage"/>
+<fullyQualifiedTypeName name="concreta.ModelFactory"/>
+<fullyQualifiedTypeName name="abstracta.ModelFactoryAbstracta"/>
+<fullyQualifiedTypeName name="concreta.DiagramaClases"/>
+<fullyQualifiedTypeName name="concreta.Paquete"/>
+<fullyQualifiedTypeName name="concreta.Atributo"/>
+<fullyQualifiedTypeName name="concreta.Metodo"/>
+<fullyQualifiedTypeName name="diagrama.model.TransformacionM2M"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.widgets.DirectoryDialog"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.widgets.Shell"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.SWT"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="abstracta.PaqueteAbstracta"/>
+<fullyQualifiedTypeName name="abstracta.ClaseAbstracta"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="abstracta.AtributoAbstracta"/>
+<fullyQualifiedTypeName name="abstracta.MetodoAbstracta"/>
+<fullyQualifiedTypeName name="concreta.Parametro"/>
+<fullyQualifiedTypeName name="abstracta.ParametroAbstracta"/>
+<fullyQualifiedTypeName name="abstracta.HerenciaAbstracta"/>
+<fullyQualifiedTypeName name="abstracta.AbstractaFactory"/>
+<fullyQualifiedTypeName name="abstracta.RelacionAbstracta"/>
+<fullyQualifiedTypeName name="abstracta.ContainmentAbstracta"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,7 @@
+# Tracing options for the concreta.diagram plug-in
+
+# Common issues
+concreta.diagram/debug=false
+
+# Visual IDs
+concreta.diagram/debug/visualID=false

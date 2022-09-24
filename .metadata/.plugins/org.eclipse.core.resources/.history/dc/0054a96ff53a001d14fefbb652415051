@@ -1,0 +1,108 @@
+/*
+ * 
+ */
+package concreta.diagram.edit.parts;
+
+/**
+ * @generated
+ */
+public class ConcretaEditPartFactory implements org.eclipse.gef.EditPartFactory {
+
+		/**
+ * @generated
+ */
+	public org.eclipse.gef.EditPart createEditPart(org.eclipse.gef.EditPart context, Object model) {
+		if (model instanceof org.eclipse.gmf.runtime.notation.View) {
+			org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) model;
+			switch (concreta.diagram.part.ConcretaVisualIDRegistry.getVisualID(view)) {
+				
+	case concreta.diagram.edit.parts.DiagramaClasesEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.DiagramaClasesEditPart(view);
+									
+	case concreta.diagram.edit.parts.PaqueteEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.PaqueteEditPart(view);
+					
+	case concreta.diagram.edit.parts.PaqueteNombreEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.PaqueteNombreEditPart(view);
+									
+	case concreta.diagram.edit.parts.ClaseEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ClaseEditPart(view);
+					
+	case concreta.diagram.edit.parts.ClaseNombreEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ClaseNombreEditPart(view);
+									
+	case concreta.diagram.edit.parts.Clase2EditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.Clase2EditPart(view);
+					
+	case concreta.diagram.edit.parts.ClaseNombre2EditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ClaseNombre2EditPart(view);
+									
+	case concreta.diagram.edit.parts.AtributoEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AtributoEditPart(view);
+					
+	case concreta.diagram.edit.parts.AtributoNombreEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AtributoNombreEditPart(view);
+									
+	case concreta.diagram.edit.parts.MetodoEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.MetodoEditPart(view);
+					
+	case concreta.diagram.edit.parts.MetodoNombreEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.MetodoNombreEditPart(view);
+									
+	case concreta.diagram.edit.parts.ParametroEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ParametroEditPart(view);
+					
+	case concreta.diagram.edit.parts.ParametroNombreEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ParametroNombreEditPart(view);
+								
+	case concreta.diagram.edit.parts.PaquetePaqueteListaClasesCompartmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.PaquetePaqueteListaClasesCompartmentEditPart(view);
+
+	case concreta.diagram.edit.parts.ClaseClaseListaAtributosCompartmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ClaseClaseListaAtributosCompartmentEditPart(view);
+
+	case concreta.diagram.edit.parts.ClaseClaseListaMetodosCompartmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ClaseClaseListaMetodosCompartmentEditPart(view);
+
+	case concreta.diagram.edit.parts.MetodoMetodoListaParametrosCompartmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.MetodoMetodoListaParametrosCompartmentEditPart(view);
+
+	case concreta.diagram.edit.parts.ClaseClaseListaAtributosCompartment2EditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ClaseClaseListaAtributosCompartment2EditPart(view);
+
+	case concreta.diagram.edit.parts.ClaseClaseListaMetodosCompartment2EditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ClaseClaseListaMetodosCompartment2EditPart(view);
+									
+	case concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.RelacionEditPart(view);
+					
+									
+	case concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ContainmentEditPart(view);
+					
+									
+	case concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.HerenciaEditPart(view);
+					
+							}
+		}
+		return createUnrecognizedEditPart(context, model);
+	}
+	
+		/**
+ * @generated
+ */
+	 private org.eclipse.gef.EditPart createUnrecognizedEditPart(org.eclipse.gef.EditPart context, Object model) {
+	 	// Handle creation of unrecognized child node EditParts here
+	 	return null;
+	 }
+	
+		/**
+ * @generated
+ */
+	public static org.eclipse.gef.tools.CellEditorLocator getTextCellEditorLocator(
+			org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart source) {
+		return org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
+	}
+	
+	}

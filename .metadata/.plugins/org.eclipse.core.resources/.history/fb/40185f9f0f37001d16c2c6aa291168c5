@@ -1,0 +1,85 @@
+@namespace(uri="concreta", prefix="concreta")
+@gmf
+package concreta;
+
+class ModelFactory {
+	attr String nombre;
+	attr String ruta;
+	val DiagramaClases[*] listaDiagramasClases;	
+}
+
+@gmf.diagram
+class DiagramaClases {
+	attr String nombre;
+    val Paquete[*] listaPaquetes;
+	val Clase[*] listaClases;
+	val Relacion[*] listaRelaciones;
+	val Herencia[*] listaRelacionesHerencia;
+	val Containment[*] listaRelacionesContaiment;
+	
+}
+
+@gmf.node(label = "nombre")
+class Paquete {
+    attr String nombre;
+    attr String ruta;   
+    @gmf.compartment(border.width="0")
+    val Clase[*] listaClases;
+    val Paquete[*] listaPaquetes;
+}
+
+@gmf.node(label = "nombre", color="173,228,213", label.color="37,66,86", border.color="37,66,86")
+class Clase {
+    attr String nombre;
+    attr String ruta;
+    @gmf.compartment
+    val Atributo[*] listaAtributos;
+    @gmf.compartment(collapsible="false")
+    val Metodo[*] listaMetodos;
+}
+
+@gmf.node(label = "nombre", color="173,228,213")
+class Atributo {
+    attr String nombre;
+}
+
+//    @gmf.compartment -- no se si es necesario ponerle esto
+//   val Parametro[*] listaParametros;
+@gmf.node(label = "nombre", color="173,228,213")
+class Metodo {
+    attr String nombre;
+    attr String sentencia;
+    attr String valorRetorno;
+//    @gmf.compartment         los atributos es necesario aqui
+//    val Atributo[*] listaAtributos;
+}
+
+//Las lineas de las relaciones como debe ser? 
+//Los aatributos de las relaciones van aqui?
+@gmf.link(source="source", target="target", style="solid", width="2", color="37,66,86")
+class Relacion {
+  	ref Clase source;
+    ref Clase target;
+    attr String tipo;
+	attr String multiplicidadA;
+	attr String multiplicidadB;
+   	attr String rolA;
+	attr String rolB;
+}
+
+@gmf.link(source="source",label="rolA",label="rolB", target="target", style="solid", width="2", source.decoration="filledrhomb", color="37,66,86")
+class Containment {
+  	ref Clase source;
+    ref Clase target;
+//  attr String tipo;
+	attr String multiplicidadA;
+	attr String multiplicidadB;
+   	attr String rolA;
+	attr String rolB;
+}
+
+@gmf.link(source="source", target="target", style="solid", width="2", color="37,66,86", target.decoration="closedarrow")
+class Herencia {
+	ref Clase source;
+	ref Clase target;
+}

@@ -1,0 +1,330 @@
+/**
+ */
+package concreta.impl;
+
+import concreta.ConcretaPackage;
+import concreta.Metodo;
+import concreta.Parametro;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Metodo</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link concreta.impl.MetodoImpl#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link concreta.impl.MetodoImpl#getSentencia <em>Sentencia</em>}</li>
+ *   <li>{@link concreta.impl.MetodoImpl#getValorRetorno <em>Valor Retorno</em>}</li>
+ *   <li>{@link concreta.impl.MetodoImpl#getListaParametros <em>Lista Parametros</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class MetodoImpl extends EObjectImpl implements Metodo {
+	/**
+	 * The default value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNombre()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NOMBRE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNombre()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nombre = NOMBRE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSentencia() <em>Sentencia</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSentencia()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SENTENCIA_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSentencia() <em>Sentencia</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSentencia()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sentencia = SENTENCIA_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValorRetorno() <em>Valor Retorno</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValorRetorno()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALOR_RETORNO_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValorRetorno() <em>Valor Retorno</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValorRetorno()
+	 * @generated
+	 * @ordered
+	 */
+	protected String valorRetorno = VALOR_RETORNO_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getListaParametros() <em>Lista Parametros</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getListaParametros()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parametro> listaParametros;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MetodoImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return ConcretaPackage.Literals.METODO;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNombre(String newNombre) {
+		String oldNombre = nombre;
+		nombre = newNombre;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConcretaPackage.METODO__NOMBRE, oldNombre, nombre));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getSentencia() {
+		return sentencia;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSentencia(String newSentencia) {
+		String oldSentencia = sentencia;
+		sentencia = newSentencia;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConcretaPackage.METODO__SENTENCIA, oldSentencia, sentencia));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getValorRetorno() {
+		return valorRetorno;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValorRetorno(String newValorRetorno) {
+		String oldValorRetorno = valorRetorno;
+		valorRetorno = newValorRetorno;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConcretaPackage.METODO__VALOR_RETORNO, oldValorRetorno, valorRetorno));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Parametro> getListaParametros() {
+		if (listaParametros == null) {
+			listaParametros = new EObjectContainmentEList<Parametro>(Parametro.class, this, ConcretaPackage.METODO__LISTA_PARAMETROS);
+		}
+		return listaParametros;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ConcretaPackage.METODO__LISTA_PARAMETROS:
+				return ((InternalEList<?>)getListaParametros()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ConcretaPackage.METODO__NOMBRE:
+				return getNombre();
+			case ConcretaPackage.METODO__SENTENCIA:
+				return getSentencia();
+			case ConcretaPackage.METODO__VALOR_RETORNO:
+				return getValorRetorno();
+			case ConcretaPackage.METODO__LISTA_PARAMETROS:
+				return getListaParametros();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ConcretaPackage.METODO__NOMBRE:
+				setNombre((String)newValue);
+				return;
+			case ConcretaPackage.METODO__SENTENCIA:
+				setSentencia((String)newValue);
+				return;
+			case ConcretaPackage.METODO__VALOR_RETORNO:
+				setValorRetorno((String)newValue);
+				return;
+			case ConcretaPackage.METODO__LISTA_PARAMETROS:
+				getListaParametros().clear();
+				getListaParametros().addAll((Collection<? extends Parametro>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ConcretaPackage.METODO__NOMBRE:
+				setNombre(NOMBRE_EDEFAULT);
+				return;
+			case ConcretaPackage.METODO__SENTENCIA:
+				setSentencia(SENTENCIA_EDEFAULT);
+				return;
+			case ConcretaPackage.METODO__VALOR_RETORNO:
+				setValorRetorno(VALOR_RETORNO_EDEFAULT);
+				return;
+			case ConcretaPackage.METODO__LISTA_PARAMETROS:
+				getListaParametros().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ConcretaPackage.METODO__NOMBRE:
+				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
+			case ConcretaPackage.METODO__SENTENCIA:
+				return SENTENCIA_EDEFAULT == null ? sentencia != null : !SENTENCIA_EDEFAULT.equals(sentencia);
+			case ConcretaPackage.METODO__VALOR_RETORNO:
+				return VALOR_RETORNO_EDEFAULT == null ? valorRetorno != null : !VALOR_RETORNO_EDEFAULT.equals(valorRetorno);
+			case ConcretaPackage.METODO__LISTA_PARAMETROS:
+				return listaParametros != null && !listaParametros.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (nombre: ");
+		result.append(nombre);
+		result.append(", sentencia: ");
+		result.append(sentencia);
+		result.append(", valorRetorno: ");
+		result.append(valorRetorno);
+		result.append(')');
+		return result.toString();
+	}
+
+} //MetodoImpl

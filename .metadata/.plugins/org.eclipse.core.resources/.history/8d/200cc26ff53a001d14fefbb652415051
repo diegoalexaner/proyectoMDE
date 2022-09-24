@@ -1,0 +1,21 @@
+/*
+ * 
+ */
+package concreta.diagram.providers;
+
+/**
+ * @generated
+ */
+public class ConcretaEditPartProvider extends org.eclipse.gmf.tooling.runtime.providers.DefaultEditPartProvider {
+
+	
+	/**
+ * @generated
+ */
+	public ConcretaEditPartProvider() {
+		super(new concreta.diagram.edit.parts.ConcretaEditPartFactory(), 			concreta.diagram.part.ConcretaVisualIDRegistry.TYPED_INSTANCE, 			concreta.diagram.edit.parts.DiagramaClasesEditPart.MODEL_ID			
+		);
+	}
+
+
+	}

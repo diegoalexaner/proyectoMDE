@@ -1,0 +1,28 @@
+/*
+ * 
+ */
+package concreta.diagram.providers;
+
+/**
+ * @generated
+ */
+public class ElementInitializers {
+
+	protected ElementInitializers() {
+		// use #getInstance to access cached instance
+	} 
+
+			
+	
+	
+	/**
+ * @generated
+ */
+	public static ElementInitializers getInstance() {
+		ElementInitializers cached = concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().getElementInitializers();
+		if (cached == null) {
+			concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().setElementInitializers(cached = new ElementInitializers());
+		}
+		return cached;
+	}
+}

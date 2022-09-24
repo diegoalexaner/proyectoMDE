@@ -1,0 +1,29 @@
+package diagrama.model;
+
+import javax.swing.JOptionPane;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.DirectoryDialog;
+import org.eclipse.swt.widgets.Shell;
+import abstracta.*;
+import concreta.*;
+
+public class TransformacionM2M{
+
+	private ModelFactory modelFactoryConcreta;
+	private ModelFactoryAbstracta modelFactoryAbstracta;
+
+	public TransformacionM2M(ModelFactory modelFactoryConcreta, ModelFactoryAbstracta modelFactoryAbstracta) {
+		super();
+		this.modelFactoryConcreta = modelFactoryConcreta;
+		this.modelFactoryAbstracta= modelFactoryAbstracta;
+	}
+
+	public void transformaModel2Model() {
+		for (DiagramaClases diagrama : modelFactoryConcreta.getListaDiagramasClases()){
+			crearPaquetesAbstracta(diagrama);
+			crearClasesAbstracta(diagrama);
+			crearRelacionesAbstracta(diagrama);
+		}
+	}
+	
+}

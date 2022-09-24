@@ -1,0 +1,113 @@
+package diagrama.model;
+
+import abstracta.*;
+import concreta.*;
+
+public class TransformacionM2M {
+
+	
+	private ModelFactory modelFactoryConcreta;
+	private abstracta.ModelFactoryAbstracta modelFactoryAbstracta;
+	
+	public TransformacionM2M(ModelFactory modelFactoryConcreta, ModelFactoryAbstracta modelFactoryAbstracta) {
+		super();
+		this.modelFactoryConcreta = modelFactoryConcreta;
+		this.modelFactoryAbstracta = modelFactoryAbstracta;
+	}
+	
+	public void transformaModel2Model() {
+		
+		for (DiagramaClases diagrama : modelFactoryConcreta.getDiagramaClases()) {
+			
+			//crear los paquetes
+			crearPaquetesAbstracta(diagrama);
+			
+			//crear los clases
+			crearClasesAbstracta(diagrama);
+			
+			//crear los clases
+			crearRelacionesAbstracta(diagrama);
+		}
+	}
+	
+	private void crearClasesAbstracta(DiagramaClases diagrama) {
+		// TODO Auto-generated method stub
+		for (Clase clase : diagrama.getClases()) {
+			ClaseAbstracta claseAbstracta = AbstractaFactory.eINSTANCE.createClaseAbstracta();
+			claseAbstracta.setName(clase.getNombre());
+			claseAbstracta.setRuta(clase.getRuta());
+			
+			for (Atributo atributo : clase.getListaAtributos()) {
+				AtributoAbstracta atributoAbstracta = AbstractaFactory.eINSTANCE.createAtributoAbstracta();
+				atributoAbstracta.setName(atributo.getNombre());
+				atributoAbstracta.setTipo(atributo.getTipo());
+				claseAbstracta.getListaAtributos().add(atributoAbstracta);
+			}
+			for (Funcion metodo : clase.getListaMetodos()) {
+				FuncionAbstracta funcionAbstracta = AbstractaFactory.eINSTANCE.createFuncionAbstracta();
+				funcionAbstracta.setName(metodo.getNombre());
+				funcionAbstracta.setBody(metodo.getBody());
+				funcionAbstracta.setTipoRetorno(metodo.getTipoRetorno());
+				claseAbstracta.getListaMetodos().add(funcionAbstracta);
+			}
+			
+			modelFactoryAbstracta.getListaPaquete().get(0).getListaClases().add(claseAbstracta);
+		}
+	}
+
+	private void crearPaquetesAbstracta(DiagramaClases diagrama) {
+		for (Paquete paquete : diagrama.getPaquetes()) {
+			PaqueteAbstracta paqueteAbstracta = AbstractaFactory.eINSTANCE.createPaqueteAbstracta();
+			paqueteAbstracta.setName(paquete.getNombre());
+			paqueteAbstracta.setRuta(paquete.getRuta());
+			modelFactoryAbstracta.getListaPaquete().get(0).getListaPaquete().add(paqueteAbstracta);
+		}
+		
+	}
+	private ClaseAbstracta obtenerClase(String nombre) {
+		
+		PaqueteAbstracta paqueteAbstractaRoot = modelFactoryAbstracta.getListaPaquete().get(0);
+		for (ClaseAbstracta claseAbstracta : paqueteAbstractaRoot.getListaClases()) {
+			if(claseAbstracta.getName().equals(nombre)) {
+				return claseAbstracta;
+			}
+		}
+		return null;
+	}
+	private void crearRelacionesAbstracta(DiagramaClases diagrama) {
+		
+		for (Containment containment : diagrama.getRelaciones()) {
+			Clase source = containment.getSource();
+			Clase target = containment.getTarget();
+			
+			ClaseAbstracta claseAbstractaSource = obtenerClase(source.getNombre());
+			ClaseAbstracta claseAbstractaTarget = obtenerClase(target.getNombre());
+			
+			RelacionAbstracta relacionAbstractaSource = AbstractaFactory.eINSTANCE.createRelacionAbstracta();
+			relacionAbstractaSource.setRolA(containment.getRolA());
+			relacionAbstractaSource.setRolB(containment.getRolB());
+			relacionAbstractaSource.setSource(claseAbstractaSource);
+			relacionAbstractaSource.setTarget(claseAbstractaTarget);
+			relacionAbstractaSource.setMultA(containment.getMultA());
+			relacionAbstractaSource.setMultB(containment.getMultB());
+			claseAbstractaSource.getListaRelaciones().add(relacionAbstractaSource);
+			
+			RelacionAbstracta relacionAbstractaTarget = AbstractaFactory.eINSTANCE.createRelacionAbstracta();
+			relacionAbstractaTarget.setRolA(containment.getRolB());
+			relacionAbstractaTarget.setRolB(containment.getRolA());
+			relacionAbstractaTarget.setMultA(containment.getMultB());
+			relacionAbstractaTarget.setMultB(containment.getMultA());
+			
+			relacionAbstractaTarget.setSource(claseAbstractaTarget);
+			relacionAbstractaTarget.setTarget(claseAbstractaSource);
+
+			claseAbstractaTarget.getListaRelaciones().add(relacionAbstractaTarget);
+
+			
+		}
+		
+	}
+
+
+	
+}

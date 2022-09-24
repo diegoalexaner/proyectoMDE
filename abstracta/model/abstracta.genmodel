@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/abstracta/src" modelPluginID="abstracta" modelName="Abstracta"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>abstracta.emf</foreignModel>
+  <genPackages prefix="Abstracta" disposableProviderFactory="true" ecorePackage="abstracta.ecore#/">
+    <genClasses ecoreClass="abstracta.ecore#//ModelFactoryAbstracta">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//ModelFactoryAbstracta/nombre"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference abstracta.ecore#//ModelFactoryAbstracta/listaPaquetes"/>
+    </genClasses>
+    <genClasses ecoreClass="abstracta.ecore#//PaqueteAbstracta">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//PaqueteAbstracta/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//PaqueteAbstracta/ruta"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference abstracta.ecore#//PaqueteAbstracta/listaClases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference abstracta.ecore#//PaqueteAbstracta/listaPaquetes"/>
+    </genClasses>
+    <genClasses ecoreClass="abstracta.ecore#//ClaseAbstracta">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//ClaseAbstracta/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//ClaseAbstracta/ruta"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference abstracta.ecore#//ClaseAbstracta/listaAtributos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference abstracta.ecore#//ClaseAbstracta/listaMetodos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference abstracta.ecore#//ClaseAbstracta/listaRelaciones"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference abstracta.ecore#//ClaseAbstracta/listaRelacionesHerencia"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference abstracta.ecore#//ClaseAbstracta/listaRelacionesContaiment"/>
+    </genClasses>
+    <genClasses ecoreClass="abstracta.ecore#//AtributoAbstracta">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//AtributoAbstracta/nombre"/>
+    </genClasses>
+    <genClasses ecoreClass="abstracta.ecore#//ParametroAbstracta">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//ParametroAbstracta/nombre"/>
+    </genClasses>
+    <genClasses ecoreClass="abstracta.ecore#//MetodoAbstracta">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//MetodoAbstracta/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//MetodoAbstracta/sentencias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//MetodoAbstracta/valorRetorno"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference abstracta.ecore#//MetodoAbstracta/listaParametros"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference abstracta.ecore#//MetodoAbstracta/listaAtributos"/>
+    </genClasses>
+    <genClasses ecoreClass="abstracta.ecore#//RelacionAbstracta">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference abstracta.ecore#//RelacionAbstracta/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference abstracta.ecore#//RelacionAbstracta/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//RelacionAbstracta/rolA"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//RelacionAbstracta/rolB"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//RelacionAbstracta/multiplicidadA"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//RelacionAbstracta/multiplicidadB"/>
+    </genClasses>
+    <genClasses ecoreClass="abstracta.ecore#//ContainmentAbstracta">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference abstracta.ecore#//ContainmentAbstracta/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference abstracta.ecore#//ContainmentAbstracta/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//ContainmentAbstracta/multiplicidadA"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//ContainmentAbstracta/multiplicidadB"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//ContainmentAbstracta/rolA"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstracta.ecore#//ContainmentAbstracta/rolB"/>
+    </genClasses>
+    <genClasses ecoreClass="abstracta.ecore#//HerenciaAbstracta">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference abstracta.ecore#//HerenciaAbstracta/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference abstracta.ecore#//HerenciaAbstracta/target"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

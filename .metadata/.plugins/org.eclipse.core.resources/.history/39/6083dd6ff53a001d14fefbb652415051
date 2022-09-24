@@ -1,0 +1,30 @@
+/*
+ * 
+ */
+package concreta.diagram.preferences;
+
+/**
+ * @generated
+ */
+public class DiagramPreferenceInitializer extends org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer {
+
+	/**
+ * @generated
+ */
+	public void initializeDefaultPreferences() {
+		org.eclipse.jface.preference.IPreferenceStore store = getPreferenceStore();
+		concreta.diagram.preferences.DiagramGeneralPreferencePage.initDefaults(store);
+concreta.diagram.preferences.DiagramAppearancePreferencePage.initDefaults(store);
+concreta.diagram.preferences.DiagramConnectionsPreferencePage.initDefaults(store);
+concreta.diagram.preferences.DiagramPrintingPreferencePage.initDefaults(store);
+concreta.diagram.preferences.DiagramRulersAndGridPreferencePage.initDefaults(store);
+
+	}
+
+	/**
+ * @generated
+ */
+	protected org.eclipse.jface.preference.IPreferenceStore getPreferenceStore() {
+		return concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().getPreferenceStore();
+	}
+} 

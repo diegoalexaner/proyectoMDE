@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="concreta">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledRhomb">
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <descriptors name="PaqueteFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="PaqueteFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="PaqueteLabelFigure" text="Paquete">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="PaqueteListaClasesCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigurePaqueteLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getPaqueteListaClasesCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="ClaseFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ClaseFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="37" green="66" blue="86"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="173" green="228" blue="213"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ClaseLabelFigure" text="Clase">
+          <foregroundColor xsi:type="gmfgraph:RGBColor" red="37" green="66" blue="86"/>
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ClaseListaAtributosCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ClaseListaMetodosCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureClaseLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getClaseListaAtributosCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors accessor="getClaseListaMetodosCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="AtributoFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AtributoFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="173" green="228" blue="213"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="AtributoLabelFigure" text="Atributo"/>
+      </actualFigure>
+      <accessors accessor="getFigureAtributoLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ParametroFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ParametroFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="173" green="228" blue="213"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ParametroLabelFigure" text="Parametro"/>
+      </actualFigure>
+      <accessors accessor="getFigureParametroLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="MetodoFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="MetodoFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="173" green="228" blue="213"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="MetodoLabelFigure" text="Metodo">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="MetodoListaParametrosCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureMetodoLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+      <accessors accessor="getMetodoListaParametrosCompartmentFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="RelacionFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RelacionFigure" lineWidth="2">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="37" green="66" blue="86"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ContainmentFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ContainmentFigure" lineWidth="2" sourceDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="37" green="66" blue="86"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ContainmentLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ContainmentLabelLabel" text="Containment"/>
+    </descriptors>
+    <descriptors name="HerenciaFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="HerenciaFigure" lineWidth="2" targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="37" green="66" blue="86"/>
+      </actualFigure>
+    </descriptors>
+  </figures>
+  <nodes name="Paquete" figure="PaqueteFigure"/>
+  <nodes name="Clase" figure="ClaseFigure"/>
+  <nodes name="Atributo" figure="AtributoFigure"/>
+  <nodes name="Parametro" figure="ParametroFigure"/>
+  <nodes name="Metodo" figure="MetodoFigure"/>
+  <connections name="Relacion" figure="RelacionFigure"/>
+  <connections name="Containment" figure="ContainmentFigure"/>
+  <connections name="Herencia" figure="HerenciaFigure"/>
+  <compartments name="PaqueteListaClasesCompartment" figure="PaqueteFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments name="ClaseListaAtributosCompartment" figure="ClaseFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <compartments name="ClaseListaMetodosCompartment" figure="ClaseFigure" accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+  <compartments name="MetodoListaParametrosCompartment" figure="MetodoFigure" collapsible="true" accessor="//@figures.0/@descriptors.4/@accessors.1"/>
+  <labels name="PaqueteLabel" figure="PaqueteFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ClaseLabel" figure="ClaseFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="AtributoLabel" figure="AtributoFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="ParametroLabel" figure="ParametroFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="MetodoLabel" figure="MetodoFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="ContainmentLabel" figure="ContainmentLabelFigure" elementIcon="false"/>
+</gmfgraph:Canvas>

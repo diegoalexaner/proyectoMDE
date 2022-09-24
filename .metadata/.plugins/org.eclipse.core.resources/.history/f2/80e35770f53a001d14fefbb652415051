@@ -1,0 +1,327 @@
+	/*
+ * 
+ */
+package concreta.diagram.navigator;
+
+/**
+ * @generated
+ */
+public class ConcretaNavigatorLabelProvider extends org.eclipse.jface.viewers.LabelProvider implements org.eclipse.ui.navigator.ICommonLabelProvider, org.eclipse.jface.viewers.ITreePathLabelProvider {
+
+		/**
+ * @generated
+ */
+static {
+	concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", org.eclipse.jface.resource.ImageDescriptor.getMissingImageDescriptor());  //$NON-NLS-1$
+	concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?ImageNotFound", org.eclipse.jface.resource.ImageDescriptor.getMissingImageDescriptor());  //$NON-NLS-1$
+}
+	
+		/**
+ * @generated
+ */
+public void updateLabel(org.eclipse.jface.viewers.ViewerLabel label, org.eclipse.jface.viewers.TreePath elementPath) {
+	Object element = elementPath.getLastSegment();
+	if (element instanceof concreta.diagram.navigator.ConcretaNavigatorItem && !isOwnView(((concreta.diagram.navigator.ConcretaNavigatorItem) element).getView())) {
+		return;
+	}
+	label.setText(getText(element));
+	label.setImage(getImage(element));
+}
+	
+		/**
+ * @generated
+ */
+public org.eclipse.swt.graphics.Image getImage(Object element) {
+	if (element instanceof concreta.diagram.navigator.ConcretaNavigatorGroup) {
+	concreta.diagram.navigator.ConcretaNavigatorGroup group = (concreta.diagram.navigator.ConcretaNavigatorGroup) element;
+	return concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
+}
+
+	if (element instanceof concreta.diagram.navigator.ConcretaNavigatorItem) {
+	concreta.diagram.navigator.ConcretaNavigatorItem navigatorItem = (concreta.diagram.navigator.ConcretaNavigatorItem) element;
+	if (!isOwnView(navigatorItem.getView())) {
+		return super.getImage(element);
+	}
+	return getImage(navigatorItem.getView());
+}
+
+	// Due to plugin.xml content will be called only for "own" views
+if (element instanceof org.eclipse.core.runtime.IAdaptable) {
+	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) ((org.eclipse.core.runtime.IAdaptable) element).getAdapter(org.eclipse.gmf.runtime.notation.View.class);
+	if (view != null && isOwnView(view)) {
+		return getImage(view);
+	}
+}
+
+		return super.getImage(element);
+}
+	
+		/**
+ * @generated
+ */
+public org.eclipse.swt.graphics.Image getImage(org.eclipse.gmf.runtime.notation.View view) {
+		switch (concreta.diagram.part.ConcretaVisualIDRegistry.getVisualID(view)) {
+		case concreta.diagram.edit.parts.DiagramaClasesEditPart.VISUAL_ID:
+	return getImage("Navigator?Diagram?concreta?DiagramaClases", concreta.diagram.providers.ConcretaElementTypes.DiagramaClases_1000); //$NON-NLS-1$
+case concreta.diagram.edit.parts.PaqueteEditPart.VISUAL_ID:
+	return getImage("Navigator?TopLevelNode?concreta?Paquete", concreta.diagram.providers.ConcretaElementTypes.Paquete_2001); //$NON-NLS-1$
+case concreta.diagram.edit.parts.ClaseEditPart.VISUAL_ID:
+	return getImage("Navigator?TopLevelNode?concreta?Clase", concreta.diagram.providers.ConcretaElementTypes.Clase_2002); //$NON-NLS-1$
+case concreta.diagram.edit.parts.Clase2EditPart.VISUAL_ID:
+	return getImage("Navigator?Node?concreta?Clase", concreta.diagram.providers.ConcretaElementTypes.Clase_3001); //$NON-NLS-1$
+case concreta.diagram.edit.parts.AtributoEditPart.VISUAL_ID:
+	return getImage("Navigator?Node?concreta?Atributo", concreta.diagram.providers.ConcretaElementTypes.Atributo_3002); //$NON-NLS-1$
+case concreta.diagram.edit.parts.MetodoEditPart.VISUAL_ID:
+	return getImage("Navigator?Node?concreta?Metodo", concreta.diagram.providers.ConcretaElementTypes.Metodo_3003); //$NON-NLS-1$
+case concreta.diagram.edit.parts.ParametroEditPart.VISUAL_ID:
+	return getImage("Navigator?Node?concreta?Parametro", concreta.diagram.providers.ConcretaElementTypes.Parametro_3004); //$NON-NLS-1$
+case concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID:
+	return getImage("Navigator?Link?concreta?Relacion", concreta.diagram.providers.ConcretaElementTypes.Relacion_4001); //$NON-NLS-1$
+case concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID:
+	return getImage("Navigator?Link?concreta?Containment", concreta.diagram.providers.ConcretaElementTypes.Containment_4002); //$NON-NLS-1$
+case concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID:
+	return getImage("Navigator?Link?concreta?Herencia", concreta.diagram.providers.ConcretaElementTypes.Herencia_4003); //$NON-NLS-1$
+	}
+		return getImage("Navigator?UnknownElement", null);  //$NON-NLS-1$
+}
+	
+		/**
+ * @generated
+ */
+private org.eclipse.swt.graphics.Image getImage(String key, org.eclipse.gmf.runtime.emf.type.core.IElementType elementType) {
+	org.eclipse.jface.resource.ImageRegistry imageRegistry = concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().getImageRegistry();
+	org.eclipse.swt.graphics.Image image = imageRegistry.get(key);
+	if (image == null && elementType != null && concreta.diagram.providers.ConcretaElementTypes.isKnownElementType(elementType)) {
+		image = concreta.diagram.providers.ConcretaElementTypes.getImage(elementType);
+		imageRegistry.put(key, image);
+	}
+			
+	if (image == null) {
+		image = imageRegistry.get("Navigator?ImageNotFound");  //$NON-NLS-1$
+		imageRegistry.put(key, image);
+	}
+	return image;
+}
+	
+		/**
+ * @generated
+ */
+public String getText(Object element) {
+	if (element instanceof concreta.diagram.navigator.ConcretaNavigatorGroup) {
+	concreta.diagram.navigator.ConcretaNavigatorGroup group = (concreta.diagram.navigator.ConcretaNavigatorGroup) element;
+	return group.getGroupName();
+}
+
+	if (element instanceof concreta.diagram.navigator.ConcretaNavigatorItem) {
+	concreta.diagram.navigator.ConcretaNavigatorItem navigatorItem = (concreta.diagram.navigator.ConcretaNavigatorItem) element;
+   		if (!isOwnView(navigatorItem.getView())) {
+   			return null;
+   		}
+   		return getText(navigatorItem.getView());
+	}
+
+	// Due to plugin.xml content will be called only for "own" views
+if (element instanceof org.eclipse.core.runtime.IAdaptable) {
+	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) ((org.eclipse.core.runtime.IAdaptable) element).getAdapter(org.eclipse.gmf.runtime.notation.View.class);
+	if (view != null && isOwnView(view)) {
+		return getText(view);
+	}
+}
+
+		return super.getText(element);
+}
+	
+		/**
+ * @generated
+ */
+public String getText(org.eclipse.gmf.runtime.notation.View view) {
+	if (view.getElement() != null && view.getElement().eIsProxy()) {
+		return getUnresolvedDomainElementProxyText(view);
+	}
+		switch (concreta.diagram.part.ConcretaVisualIDRegistry.getVisualID(view)) {
+		case concreta.diagram.edit.parts.DiagramaClasesEditPart.VISUAL_ID:
+	return getDiagramaClases_1000Text(view);
+case concreta.diagram.edit.parts.PaqueteEditPart.VISUAL_ID:
+	return getPaquete_2001Text(view);
+case concreta.diagram.edit.parts.ClaseEditPart.VISUAL_ID:
+	return getClase_2002Text(view);
+case concreta.diagram.edit.parts.Clase2EditPart.VISUAL_ID:
+	return getClase_3001Text(view);
+case concreta.diagram.edit.parts.AtributoEditPart.VISUAL_ID:
+	return getAtributo_3002Text(view);
+case concreta.diagram.edit.parts.MetodoEditPart.VISUAL_ID:
+	return getMetodo_3003Text(view);
+case concreta.diagram.edit.parts.ParametroEditPart.VISUAL_ID:
+	return getParametro_3004Text(view);
+case concreta.diagram.edit.parts.RelacionEditPart.VISUAL_ID:
+	return getRelacion_4001Text(view);
+case concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID:
+	return getContainment_4002Text(view);
+case concreta.diagram.edit.parts.HerenciaEditPart.VISUAL_ID:
+	return getHerencia_4003Text(view);
+	}
+		return getUnknownElementText(view);
+}
+	
+		/**
+ * @generated
+ */
+private String getDiagramaClases_1000Text(org.eclipse.gmf.runtime.notation.View view) {
+			concreta.DiagramaClases domainModelElement = (concreta.DiagramaClases) view.getElement();
+if (domainModelElement != null) {
+	return domainModelElement.getNombre();
+} else {
+	concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 1000);  //$NON-NLS-1$
+		return "";  //$NON-NLS-1$
+}
+	}
+	/**
+ * @generated
+ */
+private String getPaquete_2001Text(org.eclipse.gmf.runtime.notation.View view) {
+					org.eclipse.gmf.runtime.common.ui.services.parser.IParser parser = concreta.diagram.providers.ConcretaParserProvider.getParser(concreta.diagram.providers.ConcretaElementTypes.Paquete_2001, view.getElement() != null ? view.getElement() : view, concreta.diagram.part.ConcretaVisualIDRegistry.getType(concreta.diagram.edit.parts.PaqueteNombreEditPart.VISUAL_ID));
+if (parser != null) {
+	return parser.getPrintString(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(view.getElement() != null ? view.getElement() : view), org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions.NONE.intValue());
+} else {
+	concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5005); //$NON-NLS-1$
+	return "";  //$NON-NLS-1$
+}
+	}
+	/**
+ * @generated
+ */
+private String getClase_2002Text(org.eclipse.gmf.runtime.notation.View view) {
+					org.eclipse.gmf.runtime.common.ui.services.parser.IParser parser = concreta.diagram.providers.ConcretaParserProvider.getParser(concreta.diagram.providers.ConcretaElementTypes.Clase_2002, view.getElement() != null ? view.getElement() : view, concreta.diagram.part.ConcretaVisualIDRegistry.getType(concreta.diagram.edit.parts.ClaseNombreEditPart.VISUAL_ID));
+if (parser != null) {
+	return parser.getPrintString(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(view.getElement() != null ? view.getElement() : view), org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions.NONE.intValue());
+} else {
+	concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5006); //$NON-NLS-1$
+	return "";  //$NON-NLS-1$
+}
+	}
+	/**
+ * @generated
+ */
+private String getClase_3001Text(org.eclipse.gmf.runtime.notation.View view) {
+					org.eclipse.gmf.runtime.common.ui.services.parser.IParser parser = concreta.diagram.providers.ConcretaParserProvider.getParser(concreta.diagram.providers.ConcretaElementTypes.Clase_3001, view.getElement() != null ? view.getElement() : view, concreta.diagram.part.ConcretaVisualIDRegistry.getType(concreta.diagram.edit.parts.ClaseNombre2EditPart.VISUAL_ID));
+if (parser != null) {
+	return parser.getPrintString(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(view.getElement() != null ? view.getElement() : view), org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions.NONE.intValue());
+} else {
+	concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5004); //$NON-NLS-1$
+	return "";  //$NON-NLS-1$
+}
+	}
+	/**
+ * @generated
+ */
+private String getAtributo_3002Text(org.eclipse.gmf.runtime.notation.View view) {
+					org.eclipse.gmf.runtime.common.ui.services.parser.IParser parser = concreta.diagram.providers.ConcretaParserProvider.getParser(concreta.diagram.providers.ConcretaElementTypes.Atributo_3002, view.getElement() != null ? view.getElement() : view, concreta.diagram.part.ConcretaVisualIDRegistry.getType(concreta.diagram.edit.parts.AtributoNombreEditPart.VISUAL_ID));
+if (parser != null) {
+	return parser.getPrintString(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(view.getElement() != null ? view.getElement() : view), org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions.NONE.intValue());
+} else {
+	concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
+	return "";  //$NON-NLS-1$
+}
+	}
+	/**
+ * @generated
+ */
+private String getMetodo_3003Text(org.eclipse.gmf.runtime.notation.View view) {
+					org.eclipse.gmf.runtime.common.ui.services.parser.IParser parser = concreta.diagram.providers.ConcretaParserProvider.getParser(concreta.diagram.providers.ConcretaElementTypes.Metodo_3003, view.getElement() != null ? view.getElement() : view, concreta.diagram.part.ConcretaVisualIDRegistry.getType(concreta.diagram.edit.parts.MetodoNombreEditPart.VISUAL_ID));
+if (parser != null) {
+	return parser.getPrintString(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(view.getElement() != null ? view.getElement() : view), org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions.NONE.intValue());
+} else {
+	concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5003); //$NON-NLS-1$
+	return "";  //$NON-NLS-1$
+}
+	}
+	/**
+ * @generated
+ */
+private String getParametro_3004Text(org.eclipse.gmf.runtime.notation.View view) {
+					org.eclipse.gmf.runtime.common.ui.services.parser.IParser parser = concreta.diagram.providers.ConcretaParserProvider.getParser(concreta.diagram.providers.ConcretaElementTypes.Parametro_3004, view.getElement() != null ? view.getElement() : view, concreta.diagram.part.ConcretaVisualIDRegistry.getType(concreta.diagram.edit.parts.ParametroNombreEditPart.VISUAL_ID));
+if (parser != null) {
+	return parser.getPrintString(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(view.getElement() != null ? view.getElement() : view), org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions.NONE.intValue());
+} else {
+	concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5002); //$NON-NLS-1$
+	return "";  //$NON-NLS-1$
+}
+	}
+	/**
+ * @generated
+ */
+private String getRelacion_4001Text(org.eclipse.gmf.runtime.notation.View view) {
+						concreta.Relacion domainModelElement = (concreta.Relacion) view.getElement();
+if (domainModelElement != null) {
+	return domainModelElement.getMultiplicidadA();
+} else {
+	concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4001);  //$NON-NLS-1$
+		return "";  //$NON-NLS-1$
+}
+		}
+	/**
+ * @generated
+ */
+private String getContainment_4002Text(org.eclipse.gmf.runtime.notation.View view) {
+						concreta.Containment domainModelElement = (concreta.Containment) view.getElement();
+if (domainModelElement != null) {
+	return domainModelElement.getMultiplicidadA();
+} else {
+	concreta.diagram.part.ConcretaDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4002);  //$NON-NLS-1$
+		return "";  //$NON-NLS-1$
+}
+		}
+	/**
+ * @generated
+ */
+private String getHerencia_4003Text(org.eclipse.gmf.runtime.notation.View view) {
+								return "";  //$NON-NLS-1$
+		}
+	
+		/**
+ * @generated
+ */
+private String getUnknownElementText(org.eclipse.gmf.runtime.notation.View view) {
+	return "<UnknownElement Visual_ID = " + view.getType() + ">";  //$NON-NLS-1$  //$NON-NLS-2$
+}
+	
+		/**
+ * @generated
+ */
+private String getUnresolvedDomainElementProxyText(org.eclipse.gmf.runtime.notation.View view) {
+	return "<Unresolved domain element Visual_ID = " + view.getType() + ">";  //$NON-NLS-1$  //$NON-NLS-2$
+}
+	
+		/**
+ * @generated
+ */
+public void init(org.eclipse.ui.navigator.ICommonContentExtensionSite aConfig) {
+}
+
+		/**
+ * @generated
+ */
+public void restoreState(org.eclipse.ui.IMemento aMemento) {
+}
+
+		/**
+ * @generated
+ */
+public void saveState(org.eclipse.ui.IMemento aMemento) {
+}
+	
+		/**
+ * @generated
+ */
+public String getDescription(Object anElement) {
+	return null;
+}
+	
+		/**
+ * @generated
+ */
+private boolean isOwnView(org.eclipse.gmf.runtime.notation.View view) {
+	return concreta.diagram.edit.parts.DiagramaClasesEditPart.MODEL_ID.equals(concreta.diagram.part.ConcretaVisualIDRegistry.getModelID(view));
+}
+
+	}

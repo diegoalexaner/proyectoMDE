@@ -1,0 +1,241 @@
+package diagrama.model;
+
+import java.util.ArrayList;
+import abstracta.AbstractaFactory;
+import abstracta.AbstractaPackage;
+import abstracta.AtributoAbstracta;
+import abstracta.ClaseAbstracta;
+import abstracta.MetodoAbstracta;
+import abstracta.ModelFactoryAbstracta;
+import abstracta.PaqueteAbstracta;
+import abstracta.RelacionAbstracta;
+import concreta.Atributo;
+import concreta.Clase;
+import concreta.ConcretaFactory;
+import concreta.ConcretaPackage;
+import concreta.Containment;
+import concreta.DiagramaClases;
+import concreta.Herencia;
+import concreta.Metodo;
+import concreta.ModelFactory;
+import concreta.Paquete;
+import concreta.Relacion;
+
+public class ModelFactoryModel {
+
+	//------------------------------  Singleton ------------------------------------------------
+	private static class SingletonHolder { 
+		private final static ModelFactoryModel eINSTANCE = new ModelFactoryModel();
+	}
+
+	public static ModelFactoryModel getInstance() {
+		return SingletonHolder.eINSTANCE;
+	}
+
+	//------------------------------  Singleton ------------------------------------------------
+	private ModelFactory modelFactoryConcreta = ConcretaFactory.eINSTANCE.createModelFactory();
+	private ModelFactoryAbstracta modelFactoryAbstracta;
+
+	public ModelFactoryModel() {
+
+	}
+
+	public ModelFactoryAbstracta cargarAbstracta() {
+		ModelFactoryAbstracta modelFactory = null;
+		AbstractaPackage whoownmePackage =  AbstractaPackage.eINSTANCE;
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI("platform:/resource/test/src/model/model.abstracta");
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
+		try {
+			resource.load(null);
+			modelFactory = (ModelFactoryAbstracta)resource.getContents().get(0);
+			System.out.println("loaded: " + modelFactory);
+		}
+		catch (java.io.IOException e) {
+			System.out.println("failed to read " + uri); 		
+			System.out.println(e);
+		}
+		return modelFactory;
+	}
+
+	public ModelFactory cargarConcreta() {
+		ModelFactory modelFactory = null;
+		ConcretaPackage whoownmePackage =  ConcretaPackage.eINSTANCE;
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI("platform:/resource/test/src/model/model.concreta");
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
+
+		try {
+			resource.load(null);
+			modelFactory = (ModelFactory)resource.getContents().get(0);
+			System.out.println("loaded: " + modelFactory);
+		}
+		catch (java.io.IOException e) {
+			System.out.println("failed to read " + uri); 		
+			System.out.println(e);
+		}
+		return modelFactory;
+	}
+
+	public void salvarAbstracta() {
+
+		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI("platform:/resource/test/src/model/model.abstracta");
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
+		resource.getContents().add(modelFactoryAbstracta);
+		try {
+			resource.save(java.util.Collections.EMPTY_MAP);
+		} catch (java.io.IOException e) {
+			e.printStackTrace();
+		}
+		return;
+	}
+
+	//Es el mismo metodo de arriba arriba
+	public void transformarModelToModel() {
+
+		modelFactoryAbstracta = cargarAbstracta();
+		modelFactoryConcreta = cargarConcreta();
+
+		modelFactoryAbstracta.getListaPaquetes().get(0).getListaClases().clear();
+		modelFactoryAbstracta.getListaPaquetes().get(0).getListaPaquetes().clear();
+
+		TransformacionM2M transformacionM2M = new TransformacionM2M(modelFactoryConcreta, modelFactoryAbstracta);
+		transformacionM2M.transformaModel2Model();
+		salvarAbstracta();
+		
+		//-----------------
+		for (DiagramaClases diagrama : modelFactoryConcreta.getListaDiagramasClases()){
+			crearPaquetesAbstracta(diagrama);
+			crearClasesAbstracta(diagrama);
+			crearRelacionesAbstracta(diagrama);
+		}
+
+	}
+	
+
+	public void transformarModelToText() {
+
+		modelFactoryAbstracta = cargarAbstracta();
+		modelFactoryConcreta = cargarConcreta();
+
+		modelFactoryAbstracta.getListaPaquetes().get(0).getListaClases().clear();
+		modelFactoryAbstracta.getListaPaquetes().get(0).getListaPaquetes().clear();
+
+		TransformacionM2T transformacionM2T = new TransformacionM2T(modelFactoryConcreta, modelFactoryAbstracta);
+		transformacionM2T.transformaModel2Model();
+	}
+	
+	
+	//------------
+
+	private void crearPaquetesAbstracta(DiagramaClases diagrama) {
+		for (Paquete paquete : diagrama.getListaPaquetes()){
+			PaqueteAbstracta paqueteAbstracta = AbstractaFactory.eINSTANCE.createPaqueteAbstracta();
+			paqueteAbstracta.setNombre(paquete.getNombre());
+			paqueteAbstracta.setRuta(paquete.getRuta());
+			modelFactoryAbstracta.getListaPaquetes().get(0).getListaPaquetes().add(paqueteAbstracta);
+
+		}
+	}
+
+	//ARREGLAR LA CONCRETA PONERLE ruta
+	private void crearClasesAbstracta(DiagramaClases diagrama) {
+		for (Clase clase : diagrama.getListaClases()){
+			ClaseAbstracta claseAbstracta = AbstractaFactory.eINSTANCE.createClaseAbstracta();
+			claseAbstracta.setNombre(clase.getNombre());
+			claseAbstracta.setRuta(clase.getRuta());
+
+			for (Atributo atributo : clase.getListaAtributos()) {
+				AtributoAbstracta atributoAbstracta= AbstractaFactory.eINSTANCE.createAtributoAbstracta();
+				atributoAbstracta.setNombre(atributo.getNombre());
+				claseAbstracta.getListaAtributos().add(atributoAbstracta);
+			}
+
+			for (Metodo metodo : clase.getListaMetodos()) {
+				MetodoAbstracta metodoAbstracta = AbstractaFactory.eINSTANCE.createMetodoAbstracta();
+				metodoAbstracta.setNombre(metodo.getNombre());
+				metodoAbstracta.setSentencias(metodo.getSentencia());
+				metodoAbstracta.setValorRetorno(metodo.getValorRetorno());
+				claseAbstracta.getListaMetodos().add(metodoAbstracta);
+			}
+			modelFactoryAbstracta.getListaPaquetes().get(0).getListaClases().add(claseAbstracta);
+		}		
+	}
+//Poner la logica, si es navegable solo poner una , si poner las 2
+	private void crearRelacionesAbstracta(DiagramaClases diagrama) {
+
+		for(Relacion relacion: diagrama.getListaRelaciones()) {
+			Clase source = relacion.getSource();
+			Clase target = relacion.getTarget();
+
+			ClaseAbstracta claseAbstractaSource = obtenerClase(source.getNombre());
+			ClaseAbstracta claseAbstractaTarget = obtenerClase(target.getNombre());
+
+			RelacionAbstracta relacionAbstractaSource=AbstractaFactory.eINSTANCE.createRelacionAbstracta();
+			relacionAbstractaSource.setRolA(relacion.getRolA());
+			relacionAbstractaSource.setRolB(relacion.getRolB());
+			relacionAbstractaSource.setSource(claseAbstractaSource);
+			relacionAbstractaSource.setTarget(claseAbstractaTarget);
+			relacionAbstractaSource.setMultiplicidadA(relacion.getMultiplicidadA());
+			relacionAbstractaSource.setMultiplicidadB(relacion.getMultiplicidadB());
+			
+			claseAbstractaSource.getListaRelaciones().add(relacionAbstractaSource);
+
+			RelacionAbstracta relacionAbstractaTarget=AbstractaFactory.eINSTANCE.createRelacionAbstracta();
+			relacionAbstractaTarget.setRolA(relacion.getRolB());
+			relacionAbstractaTarget.setRolB(relacion.getRolA());
+			relacionAbstractaTarget.setSource(claseAbstractaTarget); 
+			relacionAbstractaTarget.setTarget(claseAbstractaSource);
+			relacionAbstractaTarget.setMultiplicidadA(relacion.getMultiplicidadB());
+			relacionAbstractaTarget.setMultiplicidadB(relacion.getMultiplicidadA());
+			
+			claseAbstractaTarget.getListaRelaciones().add(relacionAbstractaTarget);
+		}
+		
+		for(Containment relacionCont: diagrama.getListaRelacionesContaiment()){
+//			
+//			Clase source = relacionCont.getSource();
+//			Clase target = relacionCont.getTarget();
+//
+			
+//			ClaseAbstracta claseAbstractaSource = obtenerClase(source.getNombre());
+//			ClaseAbstracta claseAbstractaTarget = obtenerClase(target.getNombre());
+//
+//			RelacionAbstracta relacionAbstractaSource=AbstractaFactory.eINSTANCE.createRelacionAbstracta();
+//			relacionAbstractaSource.setRolA(relacionCont.getRolA());
+//			relacionAbstractaSource.setRolB(relacionCont.getRolB());
+//			relacionAbstractaSource.setSource(claseAbstractaSource);
+//			relacionAbstractaSource.setTarget(claseAbstractaTarget);
+//			relacionAbstractaSource.setMultiplicidadA(relacionCont.getMultiplicidadA());
+//			relacionAbstractaSource.setMultiplicidadB(relacionCont.getMultiplicidadB());
+//			claseAbstractaSource.getListaRelaciones().add(relacionAbstractaSource);
+//
+//			RelacionAbstracta relacionAbstractaTarget=AbstractaFactory.eINSTANCE.createRelacionAbstracta();
+//			relacionAbstractaTarget.setRolA(relacionCont.getRolA());
+//			relacionAbstractaTarget.setRolB(relacionCont.getRolB());
+//			relacionAbstractaTarget.setSource(claseAbstractaTarget); 
+//			relacionAbstractaTarget.setTarget(claseAbstractaSource);
+//			relacionAbstractaTarget.setMultiplicidadA(relacionCont.getMultiplicidadA());
+//			relacionAbstractaTarget.setMultiplicidadB(relacionCont.getMultiplicidadB());
+//			claseAbstractaTarget.getListaRelaciones().add(relacionAbstractaTarget);
+		}
+		for(Herencia relacionHere: diagrama.getListaRelacionesHerencia()) {
+
+		}
+	}
+	
+
+	private ClaseAbstracta obtenerClase(String nombre) {
+		PaqueteAbstracta paqueteAbstractaRoot = modelFactoryAbstracta.getListaPaquetes().get(0);
+		for (ClaseAbstracta claseAbstracta : paqueteAbstractaRoot.getListaClases()){
+			if(claseAbstracta.getNombre().equals(nombre)) {
+				return claseAbstracta;
+			}		
+		}
+		return null;
+	}
+
+
+}

@@ -1,0 +1,72 @@
+@namespace(
+uri="abstracta",
+prefix="abstracta")
+@gmf
+package abstracta;
+
+class ModelFactoryAbstracta {
+    attr String nombre;
+    val PaqueteAbstracta[*] listaPaquetes;
+}
+
+class PaqueteAbstracta {
+    attr String nombre;
+    attr String ruta;
+    val ClaseAbstracta[*] listaClases;
+    val PaqueteAbstracta[*] listaPaquetes;
+}
+
+class ClaseAbstracta {
+    attr String nombre;
+    attr String ruta;
+    val AtributoAbstracta[*] listaAtributos;
+    val MetodoAbstracta[*] listaMetodos;
+    val RelacionAbstracta[*] listaRelaciones;
+    val HerenciaAbstracta[*] listaRelacionesHerencia;
+	val ContainmentAbstracta[*] listaRelacionesContaiment;
+    
+}
+
+class AtributoAbstracta {
+    attr String nombre;
+}
+
+class ParametroAbstracta {
+    attr String nombre;
+}
+
+//Los metodos necesitan def eso va como variable?
+class MetodoAbstracta {
+    attr String nombre;
+    attr String sentencias;
+    attr String valorRetorno;
+    val ParametroAbstracta[*] listaParametros;
+    val AtributoAbstracta[*] listaAtributos;
+}
+
+class RelacionAbstracta{
+	ref ClaseAbstracta source;
+	ref ClaseAbstracta target;
+	attr String rolA;
+	attr String rolB;
+	attr String multiplicidadA;
+	attr String multiplicidadB;
+    attr String navegabilidadA;
+    attr String navegabilidadB;
+}
+
+
+class ContainmentAbstracta {
+  	ref ClaseAbstracta source;
+    ref ClaseAbstracta target;
+//  attr String tipo;
+	attr String multiplicidadA;
+	attr String multiplicidadB;
+   	attr String rolA;
+	attr String rolB;
+}
+
+class HerenciaAbstracta {
+	ref ClaseAbstracta source;
+	ref ClaseAbstracta target;
+}
